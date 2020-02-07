@@ -16,7 +16,24 @@
 	span{
 		color:green;
 	}
-	</style>
+</style>
+
+<script>
+  function dayNightControl(arg1){
+    var target = document.querySelector('body').style;
+    if (arg1.value === 'night'){
+      target.backgroundColor='black';
+      target.color='white';
+      arg1.value = 'day';
+    }
+    else{
+      target.backgroundColor='white';
+      target.color='black';
+      arg1.value = 'night';
+    }
+  }
+</script>
+
   </head>
   <body>
 	<h1><a href="index.html">WEB</a></h1>
@@ -24,20 +41,8 @@
   <h2><a href="index.html">1. HTML</a></h2>
   <h2><a href="index.html">2. CSS</a></h2>
   <h2><a href="index.html">3. JavaScript</a></h2>
-  
-  <input id="day_night" type="button" value="night" onclick="
-    var target = document.querySelector('body').style;
-    if (this.value === 'night'){
-      target.backgroundColor='black';
-      target.color='white';
-      this.value = 'day';
-    }
-    else{
-      target.backgroundColor='white';
-      target.color='black';
-      this.value = 'night';
-    }
-  ">
+
+  <input id="day_night" type="button" value="night" onclick="dayNightControl(this);">
 
 	 <p>
     		<span id="first" class="ps">JavaScript</span> (/'d???v??skr?pt/[6]), often abbreviated as JS, is a high-level, dynamic, weakly typed, prototype-based, multi-paradigm, and interpreted programming language. Alongside <span>HTML</span> and <span>CSS</span>, <span class="js">JavaScript</span> is one of the three core technologies of World Wide Web content production. It is used to make webpages interactive and provide online programs, including video games. The majority of websites employ it, and all modern web browsers support it without the need for plug-ins by means of a built-in <span class="js">JavaScript</span> engine. Each of the many <span class="js">JavaScript</span> engines represent a different implementation of <span class="js">JavaScript</span>, all based on the ECMAScript specification, with some engines not supporting the spec fully, and with many engines supporting additional features beyond ECMA.
