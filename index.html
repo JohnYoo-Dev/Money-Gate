@@ -25,11 +25,22 @@
       target.backgroundColor='black';
       target.color='white';
       arg1.value = 'day';
+      linkColor('powderblue');
     }
     else{
       target.backgroundColor='white';
       target.color='black';
       arg1.value = 'night';
+      linkColor('blue');
+    }
+  }
+
+  function linkColor(fontColor){
+    var linkA = document.querySelectorAll('a');
+    var i=0;
+    while (i < linkA.length){
+    linkA[i].style.color = fontColor;
+    i=i+1;
     }
   }
 </script>
