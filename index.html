@@ -19,30 +19,45 @@
 </style>
 
 <script>
-  function dayNightControl(arg1){
-    var target = document.querySelector('body').style;
-    if (arg1.value === 'night'){
-      target.backgroundColor='black';
-      target.color='white';
-      arg1.value = 'day';
-      linkColor('powderblue');
-    }
-    else{
-      target.backgroundColor='white';
-      target.color='black';
-      arg1.value = 'night';
-      linkColor('blue');
+
+  var Body = {
+
+    setbackgroundColor: function (color) {
+      var target = document.querySelector('body').style;
+      target.backgroundColor = color;
+    },
+
+    setcolor: function (color) {
+      var target = document.querySelector('body').style;
+      target.color = color;
+    },
+
+    linkColor:function (Color){
+      var linkA = document.querySelectorAll('a');
+      var i=0;
+      while (i < linkA.length){
+      linkA[i].style.color = Color;
+      i=i+1;
+      }
     }
   }
 
-  function linkColor(fontColor){
-    var linkA = document.querySelectorAll('a');
-    var i=0;
-    while (i < linkA.length){
-    linkA[i].style.color = fontColor;
-    i=i+1;
+  function dayNightControl(arg1){
+
+    if (arg1.value === 'night'){
+      Body.setbackgroundColor('black');
+      Body.setcolor('white');
+      Body.linkColor('powderblue');
+      arg1.value = 'day';
+    }
+    else{
+      Body.setbackgroundColor ('white');
+      Body.setcolor('black');
+      Body.linkColor('blue');
+      arg1.value = 'night';
     }
   }
+
 </script>
 
   </head>
